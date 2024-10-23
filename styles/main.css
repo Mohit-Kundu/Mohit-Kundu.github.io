@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --mainTextColor-light:#000;
+    --secondaryTextColor-light:rgb(51 51 51);
+    --mainLinkColor-light:#0da2b8;
+    --mainBorderColor-light:rgb(218, 218, 218);
+    --mainBgColor-light:rgb(249, 250,251);
+}
+
+*{
+    font-family: 'Readex Pro';
+    line-height: 1.5em;
+    box-sizing: border-box;
+    color: var(--mainTextColor);
+}
+
+body{
+    background-color: var(--mainBgColor);            
+}
+
+p, span, li{
+    color: var(--secondaryTextColor);
+    font-size: 1em;
+}
+
+a{
+    text-decoration: none;
+    color: var(--mainLinkColor);
+    font-weight: 500;
+}
+
+li{
+    line-height: 1.9em;
+}
+
+#container--main{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.section--page{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#wrapper--hero{
+    display: flex;
+    align-items: center;
+    gap: 4em;
+}
+
+#bio, a{
+    font-weight: 300;
+}
+
+#user-name{
+    font-size: 48px;
+    line-height: 1em;
+}
+
+#profile-pic{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.location-pill-wrapper {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    gap: 1em; /* Adds space between the location and pill box */
+}
+
+#location {
+    margin: 0; /* Removes any default margin */
+}
+
+.pill-box {
+    display: inline-flex; /* Ensures the pill-box content remains inline */
+    align-items: center;
+    padding: 3px 6px;
+    background-color: #f0f0f0; /* Light background */
+    border-radius: 50px; /* Pill shape */
+    color: #333; /* Text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    vertical-align: middle;
+}
+
+.green-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #8BC462;
+    border-radius: 50%; /* Circle */
+    margin-right: 10px; /* Space between dot and text */
+}
+
+
+#socials--list{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1em;
+    flex-wrap: wrap;
+}
+
+#socials--list a{
+    font-weight: 300;
+    color: var(--secondaryTextColor);
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+#socials--list a:hover{
+    font-weight: 100;
+    color: var(--mainLinkColor);
+    font-size: 0.9em;
+}
+
+#qualifications--list{
+    list-style: none;
+}
+
+#wrapper--techstack__items{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    font-size: 0.9em;
+}
+
+.card--techstack{
+    border: 1px solid var(--mainBorderColor);
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    align-items: center;
+}
+
+.card--project{
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid var(--mainBorderColor);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    transition: transform 0.3s;
+}
+
+.card--project:hover {
+    transform: scale(1.05);
+}
+
+.card--project a{
+    color: var(--mainTextColor);
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.card--project a:hover{
+    color: rgb(30, 190, 214);
+}
+
+.card--work-history {
+    margin: 3em auto;
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    border-left: 1px solid var(--mainBorderColor);
+    padding: 2em;
+}
+
+.line-break {
+    background-color: var(--mainBorderColor);
+    height: 1px;
+}
+
+.smaller-line-break {
+    height: 0.5px; /* A thin line */
+    background-color: var(--mainBorderColor); /* Color of the line */
+    border: none;
+    margin: 1em 0; /* Adjust as needed for spacing */
+}
+
+/* Carousel Styling */
+.carousel-container {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 2em 0;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.project-card {
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--mainTextColor);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: var(--secondaryTextColor);
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.project-number {
+    font-size: 0.9em;  /* Makes the font slightly smaller */
+    color: #6c757d;    /* Gray color */
+    text-align: left; /* Center align the text */
+    margin-top: 10px;   /* Add some space above the number */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    padding: 0.5em;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1em;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.project-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust as needed for spacing */
+}
+
+.project-number {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-right: 10px; /* Adjust to control spacing */
+}
+
+#github-link {
+    background: none;
+    width: 30px;
+    height: auto;
+    margin-left: 10px; /* Space between project number and GitHub link */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+#github-link:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.prev {
+    left: 10px;
+    color: black;
+}
+
+.next {
+    right: 10px;
+    color: black;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(55, 55, 55, 0.6);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%;
+    }
+
+    .project-card {
+        max-width: 100%;
+    }
+
+    .prev, .next {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8em;
+    }
+}
+
+/* Scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    width: 16px; /* Adjust width for a thinner scrollbar */
+    height: 16px; /* Height for horizontal scrollbars */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.0); /* Very light, subtle background */
+    border-radius: 10px; /* Rounded corners for a smooth look */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* A soft dark color for the handle */
+    border-radius: 10px; /* Rounded edges to make it sleek */
+    border: 2px solid transparent; /* Add space around the handle */
+    background-clip: padding-box; /* Ensures the transparent border is visible */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker on hover */
+}
