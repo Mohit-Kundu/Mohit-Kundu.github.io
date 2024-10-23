@@ -69,33 +69,31 @@ li{
 
 .location-pill-wrapper {
     display: flex;
-    align-items: center; /* Aligns items vertically in the center */
-    gap: 1em; /* Adds space between the location and pill box */
+    align-items: center;
+    gap: 1em;
 }
 
 #location {
-    margin: 0; /* Removes any default margin */
+    margin: 0;
 }
 
 .pill-box {
-    display: inline-flex; /* Ensures the pill-box content remains inline */
+    display: inline-flex;
     align-items: center;
     padding: 3px 6px;
-    background-color: #f0f0f0; /* Light background */
-    border-radius: 50px; /* Pill shape */
-    color: #333; /* Text color */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    vertical-align: middle;
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .green-dot {
     width: 10px;
     height: 10px;
     background-color: #8BC462;
-    border-radius: 50%; /* Circle */
-    margin-right: 10px; /* Space between dot and text */
+    border-radius: 50%;
+    margin-right: 10px;
 }
-
 
 #socials--list{
     display: flex;
@@ -176,10 +174,10 @@ li{
 }
 
 .smaller-line-break {
-    height: 0.5px; /* A thin line */
-    background-color: var(--mainBorderColor); /* Color of the line */
+    height: 0.5px;
+    background-color: var(--mainBorderColor);
     border: none;
-    margin: 1em 0; /* Adjust as needed for spacing */
+    margin: 1em 0;
 }
 
 /* Carousel Styling */
@@ -233,17 +231,24 @@ li{
     margin-bottom: 15px;
 }
 
-.project-card p {
-    color: var(--secondaryTextColor);
-    font-size: 1em;
-    line-height: 1.5;
+.project-number {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-right: 10px;
 }
 
-.project-number {
-    font-size: 0.9em;  /* Makes the font slightly smaller */
-    color: #6c757d;    /* Gray color */
-    text-align: left; /* Center align the text */
-    margin-top: 10px;   /* Add some space above the number */
+#github-link {
+    background: none;
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+#github-link:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
 }
 
 .prev, .next {
@@ -266,32 +271,6 @@ li{
     z-index: 10;
 }
 
-.project-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Adjust as needed for spacing */
-}
-
-.project-number {
-    font-size: 0.9em;
-    color: #6c757d;
-    margin-right: 10px; /* Adjust to control spacing */
-}
-
-#github-link {
-    background: none;
-    width: 30px;
-    height: auto;
-    margin-left: 10px; /* Space between project number and GitHub link */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    cursor: pointer;
-}
-
-#github-link:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
-}
-
 .prev {
     left: 10px;
     color: black;
@@ -307,14 +286,35 @@ li{
     color: white;
 }
 
-/* Responsive adjustments */
+/* Hero section responsive adjustments */
 @media (max-width: 768px) {
-    .carousel-container {
-        max-width: 100%;
+    #wrapper--hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1em;
     }
 
-    .project-card {
-        max-width: 100%;
+    #profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    #user-name {
+        font-size: 32px;
+    }
+
+    .location-pill-wrapper {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .pill-box {
+        padding: 4px 8px;
+    }
+
+    #bio {
+        font-size: 0.9em;
     }
 
     .prev, .next {
@@ -322,29 +322,30 @@ li{
         height: 30px;
         font-size: 0.8em;
     }
+
+    .carousel-container, .project-card {
+        max-width: 100%;
+    }
 }
 
 /* Scrollbar for WebKit browsers */
 ::-webkit-scrollbar {
-    width: 16px; /* Adjust width for a thinner scrollbar */
-    height: 16px; /* Height for horizontal scrollbars */
+    width: 16px;
+    height: 16px;
 }
 
-/* Track (background of the scrollbar) */
 ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.0); /* Very light, subtle background */
-    border-radius: 10px; /* Rounded corners for a smooth look */
+    background: rgba(0, 0, 0, 0.0);
+    border-radius: 10px;
 }
 
-/* Handle (the draggable part of the scrollbar) */
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2); /* A soft dark color for the handle */
-    border-radius: 10px; /* Rounded edges to make it sleek */
-    border: 2px solid transparent; /* Add space around the handle */
-    background-clip: padding-box; /* Ensures the transparent border is visible */
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker on hover */
+    background-color: rgba(0, 0, 0, 0.4);
 }
