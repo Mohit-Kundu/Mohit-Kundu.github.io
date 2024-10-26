@@ -1,66 +1,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
 
-:root{
-    --mainTextColor-light:#000;
-    --secondaryTextColor-light:rgb(51 51 51);
-    --mainLinkColor-light:#0da2b8;
-    --mainBorderColor-light:rgb(218, 218, 218);
-    --mainBgColor-light:rgb(249, 250,251);
+/* Light theme variables */
+:root {
+    --mainTextColor-light: #000;
+    --secondaryTextColor-light: rgb(51 51 51);
+    --mainLinkColor-light: #0da2b8;
+    --mainBorderColor-light: rgb(218, 218, 218);
+    --mainBgColor-light: rgb(249, 250, 251);
+
+    --mainTextColor-dark: #fff;
+    --secondaryTextColor-dark: #ddd;
+    --mainLinkColor-dark: #0da2b8;
+    --mainBorderColor-dark: #333;
+    --mainBgColor-dark: #121212;
 }
 
-*{
+/* Default to light theme */
+:root {
+    --mainTextColor: var(--mainTextColor-light);
+    --secondaryTextColor: var(--secondaryTextColor-light);
+    --mainLinkColor: var(--mainLinkColor-light);
+    --mainBorderColor: var(--mainBorderColor-light);
+    --mainBgColor: var(--mainBgColor-light);
+}
+
+/* Dark mode */
+body.dark-mode {
+    --mainTextColor: var(--mainTextColor-dark);
+    --secondaryTextColor: var(--secondaryTextColor-dark);
+    --mainLinkColor: var(--mainLinkColor-dark);
+    --mainBorderColor: var(--mainBorderColor-dark);
+    --mainBgColor: var(--mainBgColor-dark);
+    background-color: var(--mainBgColor);
+}
+
+* {
     font-family: 'Readex Pro';
     line-height: 1.5em;
     box-sizing: border-box;
     color: var(--mainTextColor);
 }
 
-body{
-    background-color: var(--mainBgColor);            
+body {
+    background-color: var(--mainBgColor);
 }
 
-p, span, li{
+p, span, li {
     color: var(--secondaryTextColor);
     font-size: 1em;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--mainLinkColor);
     font-weight: 500;
 }
 
-li{
+li {
     line-height: 1.9em;
 }
 
-#container--main{
+#container--main {
     max-width: 700px;
     margin: 0 auto;
     padding: 1em;
 }
 
-.section--page{
+.section--page {
     padding-top: 1em;
     padding-bottom: 1em;
 }
 
-#wrapper--hero{
+#wrapper--hero {
     display: flex;
     align-items: center;
     gap: 4em;
 }
 
-#bio, a{
+#bio, a {
     font-weight: 300;
 }
 
-#user-name{
+#user-name {
     font-size: 48px;
     line-height: 1em;
 }
 
-#profile-pic{
+#profile-pic {
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -95,45 +121,45 @@ li{
     margin-right: 10px;
 }
 
-#socials--list{
+#socials--list {
     display: flex;
     justify-content: space-between;
     column-gap: 1em;
     flex-wrap: wrap;
 }
 
-#socials--list a{
+#socials--list a {
     font-weight: 300;
     color: var(--secondaryTextColor);
     font-size: 0.9em;
     transition: 0.3s;
 }
 
-#socials--list a:hover{
+#socials--list a:hover {
     font-weight: 100;
     color: var(--mainLinkColor);
     font-size: 0.9em;
 }
 
-#qualifications--list{
+#qualifications--list {
     list-style: none;
 }
 
-#wrapper--techstack__items{
+#wrapper--techstack__items {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     font-size: 0.9em;
 }
 
-.card--techstack{
+.card--techstack {
     border: 1px solid var(--mainBorderColor);
     border-radius: 5px;
     padding: 0.5em 1em;
     align-items: center;
 }
 
-.card--project{
+.card--project {
     padding: 20px;
     background-color: #fff;
     border: 1px solid var(--mainBorderColor);
@@ -147,13 +173,13 @@ li{
     transform: scale(1.05);
 }
 
-.card--project a{
+.card--project a {
     color: var(--mainTextColor);
     font-size: 18px;
     transition: color 0.3s;
 }
 
-.card--project a:hover{
+.card--project a:hover {
     color: rgb(30, 190, 214);
 }
 
@@ -286,7 +312,31 @@ li{
     color: white;
 }
 
-/* Hero section responsive adjustments */
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .theme-toggle {
+    background-color: #333;
+    color: #fff;
+}
+
+#theme-icon {
+    font-size: 1.2em;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     #wrapper--hero {
         flex-direction: column;
